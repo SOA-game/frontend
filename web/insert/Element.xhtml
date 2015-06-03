@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+        >
+<h:head>
+    <title>Jaś</title>
+</h:head>
+<h:body>
+    <h:form>
+        <table>
+            <tr><td>Typ:  </td><td>
+                <h:selectOneMenu id="types"
+                                 converter="#{elementTypeConverter}"
+                                 value="#{elementBean.elementType}">
+                    <f:selectItems value="#{elementBean.elementTypes}" var="selectedType" itemLabel="#{selectedType.nazwa}" />
+                    <f:ajax render="@form" listener="#{elementBean.changeType}"/>
+                </h:selectOneMenu>
+                <h:message for="types"/>
+            </td></tr>
+            <tr><td>Kategoria:  </td><td>
+                <h:selectOneMenu id="category" value="#{elementBean.category}" converter="#{categoryConverter}">
+                    <f:selectItems value="#{elementBean.categories}"
+                                   var="type" itemValue="#{type}"
+                                   itemLabel="#{type.typ.nazwa} #{type.wartosc}"/>
+                </h:selectOneMenu>
+                <h:message for="category"/>
+            </td></tr>
+            <tr>
+                <td><h:panelGroup id="attribute1">#{elementBean.attribute1Description}</h:panelGroup></td>
+                <td><h:inputText id="atr1" value="#{elementBean.attribute1}"/></td>
+                <h:message for="atr1"/>
+            </tr>
+            <tr>
+                <td><h:panelGroup id="attribute2">#{elementBean.attribute2Description}</h:panelGroup></td>
+                <td><h:inputText id="atr2" value="#{elementBean.attribute2}"/></td>
+                <h:message for="atr2"/>
+            </tr>
+        </table>
+        <h:commandButton action="#{elementBean.sendData()}" value="Zatwierdź"/>
+        <h:messages />
+    </h:form>
+</h:body>
+</html>

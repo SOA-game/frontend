@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="IndexManagerService" targetNamespace="http://test" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://test" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://test" version="1.0" xmlns:tns="http://test" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="addCategory" types="tns:addCategory"/>
+<xs:element name="addCategoryResponse" types="tns:addCategoryResponse"/>
+<xs:element name="addElement" types="tns:addElement"/>
+<xs:element name="addElementResponse" types="tns:addElementResponse"/>
+<xs:element name="getCategories" types="tns:getCategories"/>
+<xs:element name="getCategoriesResponse" types="tns:getCategoriesResponse"/>
+<xs:element name="getCategoryEntity" types="tns:getCategoryEntity"/>
+<xs:element name="getCategoryEntityResponse" types="tns:getCategoryEntityResponse"/>
+<xs:element name="getCategoryTypes" types="tns:getCategoryTypes"/>
+<xs:element name="getCategoryTypesResponse" types="tns:getCategoryTypesResponse"/>
+<xs:element name="getElementTypes" types="tns:getElementTypes"/>
+<xs:element name="getElementTypesResponse" types="tns:getElementTypesResponse"/>
+<xs:complexType name="getCategoryTypes">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getCategoryTypesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" types="tns:kategorieEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="kategorieEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="atrybut" types="xs:string"/>
+      <xs:element name="id" types="xs:int"/>
+      <xs:element minOccurs="0" name="nazwa" types="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCategoryEntity">
+    <xs:sequence>
+      <xs:element name="arg0" types="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCategoryEntityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" types="tns:kategoriaEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="kategoriaEntity">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="elementy" nillable="true" types="tns:elementEntity"/>
+      <xs:element name="id" types="xs:int"/>
+      <xs:element minOccurs="0" name="typ" types="tns:kategorieEntity"/>
+      <xs:element name="wartosc" types="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="elementEntity">
+    <xs:sequence>
+      <xs:element name="id" types="xs:int"/>
+      <xs:element name="kategoria" types="xs:int"/>
+      <xs:element name="parametr1" types="xs:int"/>
+      <xs:element minOccurs="0" name="parametr2" types="xs:string"/>
+      <xs:element minOccurs="0" name="typ" types="tns:elementyEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="elementyEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="atrybut1" types="xs:string"/>
+      <xs:element minOccurs="0" name="atrybut2" types="xs:string"/>
+      <xs:element name="id" types="xs:int"/>
+      <xs:element minOccurs="0" name="nazwa" types="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" types="tns:kategoriaEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addCategoryResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getElementTypes">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getElementTypesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" types="tns:elementyEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCategories">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getCategoriesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" types="tns:kategoriaEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" types="tns:elementEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addElementResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getElementTypesResponse">
+    <wsdl:part element="tns:getElementTypesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElementTypes">
+    <wsdl:part element="tns:getElementTypes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addCategoryResponse">
+    <wsdl:part element="tns:addCategoryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategoryEntity">
+    <wsdl:part element="tns:getCategoryEntity" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategoryEntityResponse">
+    <wsdl:part element="tns:getCategoryEntityResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addElementResponse">
+    <wsdl:part element="tns:addElementResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategoryTypes">
+    <wsdl:part element="tns:getCategoryTypes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addElement">
+    <wsdl:part element="tns:addElement" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategories">
+    <wsdl:part element="tns:getCategories" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addCategory">
+    <wsdl:part element="tns:addCategory" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategoryTypesResponse">
+    <wsdl:part element="tns:getCategoryTypesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategoriesResponse">
+    <wsdl:part element="tns:getCategoriesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IndexManager">
+    <wsdl:operation name="getCategoryTypes">
+      <wsdl:input message="tns:getCategoryTypes" name="getCategoryTypes">
+    </wsdl:input>
+      <wsdl:output message="tns:getCategoryTypesResponse" name="getCategoryTypesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryEntity">
+      <wsdl:input message="tns:getCategoryEntity" name="getCategoryEntity">
+    </wsdl:input>
+      <wsdl:output message="tns:getCategoryEntityResponse" name="getCategoryEntityResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCategory">
+      <wsdl:input message="tns:addCategory" name="addCategory">
+    </wsdl:input>
+      <wsdl:output message="tns:addCategoryResponse" name="addCategoryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElementTypes">
+      <wsdl:input message="tns:getElementTypes" name="getElementTypes">
+    </wsdl:input>
+      <wsdl:output message="tns:getElementTypesResponse" name="getElementTypesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategories">
+      <wsdl:input message="tns:getCategories" name="getCategories">
+    </wsdl:input>
+      <wsdl:output message="tns:getCategoriesResponse" name="getCategoriesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addElement">
+      <wsdl:input message="tns:addElement" name="addElement">
+    </wsdl:input>
+      <wsdl:output message="tns:addElementResponse" name="addElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IndexManagerServiceSoapBinding" types="tns:IndexManager">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCategoryTypes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCategoryTypes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCategoryTypesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryEntity">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCategoryEntity">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCategoryEntityResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCategory">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addCategory">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addCategoryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElementTypes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getElementTypes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getElementTypesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addElement">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addElement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addElementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategories">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCategories">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCategoriesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IndexManagerService">
+    <wsdl:port binding="tns:IndexManagerServiceSoapBinding" name="IndexManagerPort">
+      <soap:address location="http://localhost:8080/ws_war_exploded/IndexManager"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

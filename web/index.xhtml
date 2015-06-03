@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+        >
+<h:head>
+    <h:outputStylesheet name="table-style.css" library="css"/>
+    <title>SO question 6089924</title>
+</h:head>
+<h:body>
+    <ui:repeat value="#{indexBean.categories}" var="type">
+        <h2>
+            #{type.typ.nazwa} #{type.typ.atrybut}=#{type.wartosc}
+            <h:commandButton action="#{indexBean.delete(type)}"/>
+        </h2>
+        <h:dataTable value="#{type.elementy}" var="element"
+                     title="#{type.typ.nazwa} #{type.wartosc}"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row">
+            <h:column>
+                <f:facet name="header">nazwa</f:facet>
+                #{element.typ.nazwa}
+            </h:column>
+            <h:column>
+                <f:facet name="header">wartosc1</f:facet>
+                #{element.typ.atrybut1} = #{element.parametr1}
+            </h:column>
+            <h:column>
+                <f:facet name="header">wartosc2</f:facet>
+                #{element.typ.atrybut2} = #{element.parametr2}
+            </h:column>
+        </h:dataTable>
+    </ui:repeat>
+</h:body>
+</html>
