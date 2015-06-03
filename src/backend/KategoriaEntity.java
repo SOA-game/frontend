@@ -46,21 +46,6 @@ public class KategoriaEntity {
     protected KategorieEntity typ;
     protected int wartosc;
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof KategoriaEntity) {
-            KategoriaEntity entity = (KategoriaEntity) obj;
-            System.out.println(id + "=" + entity.getId() + ", " +
-                    typ + "=" + entity.typ + ", " +
-                    wartosc + "=" + entity.wartosc + ", " +
-                    elementy + "=" + entity.elementy);
-            return id == entity.id;
-        } else {
-            System.out.println("inny walidator");
-            return super.equals(obj);
-        }
-    }
-
     /**
      * Gets the value of the elementy property.
      * 

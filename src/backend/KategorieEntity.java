@@ -39,20 +39,6 @@ public class KategorieEntity {
     protected int id;
     protected String nazwa;
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof KategorieEntity) {
-            KategorieEntity entity = (KategorieEntity) obj;
-            System.out.println(id + "=" + entity.getId() + ", " +
-                          atrybut + "=" + entity.atrybut + ", " +
-                            nazwa + "=" + entity.nazwa);
-            return id == entity.id;
-        } else {
-            System.out.println("inny walidator");
-            return super.equals(obj);
-        }
-    }
-
     /**
      * Gets the value of the atrybut property.
      * 

@@ -24,18 +24,22 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetElementTypes_QNAME = new QName("http://test", "getElementTypes");
+    private final static QName _GetCategoryTypes_QNAME = new QName("http://test", "getCategoryTypes");
+    private final static QName _RemoveElement_QNAME = new QName("http://test", "removeElement");
+    private final static QName _AddElement_QNAME = new QName("http://test", "addElement");
+    private final static QName _AddCategory_QNAME = new QName("http://test", "addCategory");
+    private final static QName _GetCategoryTypesResponse_QNAME = new QName("http://test", "getCategoryTypesResponse");
+    private final static QName _GetCategoriesResponse_QNAME = new QName("http://test", "getCategoriesResponse");
+    private final static QName _RemoveCategory_QNAME = new QName("http://test", "removeCategory");
     private final static QName _AddCategoryResponse_QNAME = new QName("http://test", "addCategoryResponse");
     private final static QName _GetCategoryEntity_QNAME = new QName("http://test", "getCategoryEntity");
-    private final static QName _GetElementTypes_QNAME = new QName("http://test", "getElementTypes");
     private final static QName _GetElementTypesResponse_QNAME = new QName("http://test", "getElementTypesResponse");
     private final static QName _GetCategoryEntityResponse_QNAME = new QName("http://test", "getCategoryEntityResponse");
     private final static QName _AddElementResponse_QNAME = new QName("http://test", "addElementResponse");
-    private final static QName _GetCategoryTypes_QNAME = new QName("http://test", "getCategoryTypes");
-    private final static QName _AddElement_QNAME = new QName("http://test", "addElement");
-    private final static QName _AddCategory_QNAME = new QName("http://test", "addCategory");
     private final static QName _GetCategories_QNAME = new QName("http://test", "getCategories");
-    private final static QName _GetCategoryTypesResponse_QNAME = new QName("http://test", "getCategoryTypesResponse");
-    private final static QName _GetCategoriesResponse_QNAME = new QName("http://test", "getCategoriesResponse");
+    private final static QName _RemoveCategoryResponse_QNAME = new QName("http://test", "removeCategoryResponse");
+    private final static QName _RemoveElementResponse_QNAME = new QName("http://test", "removeElementResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: backend
@@ -53,6 +57,70 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetCategories }
+     * 
+     */
+    public GetCategories createGetCategories() {
+        return new GetCategories();
+    }
+
+    /**
+     * Create an instance of {@link RemoveCategoryResponse }
+     * 
+     */
+    public RemoveCategoryResponse createRemoveCategoryResponse() {
+        return new RemoveCategoryResponse();
+    }
+
+    /**
+     * Create an instance of {@link RemoveElementResponse }
+     * 
+     */
+    public RemoveElementResponse createRemoveElementResponse() {
+        return new RemoveElementResponse();
+    }
+
+    /**
+     * Create an instance of {@link RemoveCategory }
+     * 
+     */
+    public RemoveCategory createRemoveCategory() {
+        return new RemoveCategory();
+    }
+
+    /**
+     * Create an instance of {@link AddCategoryResponse }
+     * 
+     */
+    public AddCategoryResponse createAddCategoryResponse() {
+        return new AddCategoryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCategoryEntity }
+     * 
+     */
+    public GetCategoryEntity createGetCategoryEntity() {
+        return new GetCategoryEntity();
+    }
+
+    /**
+     * Create an instance of {@link GetElementTypesResponse }
+     * 
+     */
+    public GetElementTypesResponse createGetElementTypesResponse() {
+        return new GetElementTypesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCategoryEntityResponse }
+     * 
+     */
+    public GetCategoryEntityResponse createGetCategoryEntityResponse() {
+        return new GetCategoryEntityResponse();
+    }
+
+    /**
      * Create an instance of {@link GetCategoryTypes }
      * 
      */
@@ -61,19 +129,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RemoveElement }
+     * 
+     */
+    public RemoveElement createRemoveElement() {
+        return new RemoveElement();
+    }
+
+    /**
      * Create an instance of {@link AddElement }
      * 
      */
     public AddElement createAddElement() {
         return new AddElement();
-    }
-
-    /**
-     * Create an instance of {@link GetCategories }
-     * 
-     */
-    public GetCategories createGetCategories() {
-        return new GetCategories();
     }
 
     /**
@@ -101,43 +169,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetElementTypesResponse }
-     * 
-     */
-    public GetElementTypesResponse createGetElementTypesResponse() {
-        return new GetElementTypesResponse();
-    }
-
-    /**
      * Create an instance of {@link GetElementTypes }
      * 
      */
     public GetElementTypes createGetElementTypes() {
         return new GetElementTypes();
-    }
-
-    /**
-     * Create an instance of {@link GetCategoryEntity }
-     * 
-     */
-    public GetCategoryEntity createGetCategoryEntity() {
-        return new GetCategoryEntity();
-    }
-
-    /**
-     * Create an instance of {@link AddCategoryResponse }
-     * 
-     */
-    public AddCategoryResponse createAddCategoryResponse() {
-        return new AddCategoryResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCategoryEntityResponse }
-     * 
-     */
-    public GetCategoryEntityResponse createGetCategoryEntityResponse() {
-        return new GetCategoryEntityResponse();
     }
 
     /**
@@ -173,6 +209,78 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetElementTypes }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "getElementTypes")
+    public JAXBElement<GetElementTypes> createGetElementTypes(GetElementTypes value) {
+        return new JAXBElement<GetElementTypes>(_GetElementTypes_QNAME, GetElementTypes.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoryTypes }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "getCategoryTypes")
+    public JAXBElement<GetCategoryTypes> createGetCategoryTypes(GetCategoryTypes value) {
+        return new JAXBElement<GetCategoryTypes>(_GetCategoryTypes_QNAME, GetCategoryTypes.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RemoveElement }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "removeElement")
+    public JAXBElement<RemoveElement> createRemoveElement(RemoveElement value) {
+        return new JAXBElement<RemoveElement>(_RemoveElement_QNAME, RemoveElement.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddElement }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "addElement")
+    public JAXBElement<AddElement> createAddElement(AddElement value) {
+        return new JAXBElement<AddElement>(_AddElement_QNAME, AddElement.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddCategory }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "addCategory")
+    public JAXBElement<AddCategory> createAddCategory(AddCategory value) {
+        return new JAXBElement<AddCategory>(_AddCategory_QNAME, AddCategory.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoryTypesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "getCategoryTypesResponse")
+    public JAXBElement<GetCategoryTypesResponse> createGetCategoryTypesResponse(GetCategoryTypesResponse value) {
+        return new JAXBElement<GetCategoryTypesResponse>(_GetCategoryTypesResponse_QNAME, GetCategoryTypesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoriesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "getCategoriesResponse")
+    public JAXBElement<GetCategoriesResponse> createGetCategoriesResponse(GetCategoriesResponse value) {
+        return new JAXBElement<GetCategoriesResponse>(_GetCategoriesResponse_QNAME, GetCategoriesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RemoveCategory }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://test", name = "removeCategory")
+    public JAXBElement<RemoveCategory> createRemoveCategory(RemoveCategory value) {
+        return new JAXBElement<RemoveCategory>(_RemoveCategory_QNAME, RemoveCategory.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddCategoryResponse }{@code >}}
      * 
      */
@@ -188,15 +296,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://test", name = "getCategoryEntity")
     public JAXBElement<GetCategoryEntity> createGetCategoryEntity(GetCategoryEntity value) {
         return new JAXBElement<GetCategoryEntity>(_GetCategoryEntity_QNAME, GetCategoryEntity.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetElementTypes }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://test", name = "getElementTypes")
-    public JAXBElement<GetElementTypes> createGetElementTypes(GetElementTypes value) {
-        return new JAXBElement<GetElementTypes>(_GetElementTypes_QNAME, GetElementTypes.class, null, value);
     }
 
     /**
@@ -227,33 +326,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoryTypes }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://test", name = "getCategoryTypes")
-    public JAXBElement<GetCategoryTypes> createGetCategoryTypes(GetCategoryTypes value) {
-        return new JAXBElement<GetCategoryTypes>(_GetCategoryTypes_QNAME, GetCategoryTypes.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddElement }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://test", name = "addElement")
-    public JAXBElement<AddElement> createAddElement(AddElement value) {
-        return new JAXBElement<AddElement>(_AddElement_QNAME, AddElement.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddCategory }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://test", name = "addCategory")
-    public JAXBElement<AddCategory> createAddCategory(AddCategory value) {
-        return new JAXBElement<AddCategory>(_AddCategory_QNAME, AddCategory.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCategories }{@code >}}
      * 
      */
@@ -263,21 +335,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoryTypesResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RemoveCategoryResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://test", name = "getCategoryTypesResponse")
-    public JAXBElement<GetCategoryTypesResponse> createGetCategoryTypesResponse(GetCategoryTypesResponse value) {
-        return new JAXBElement<GetCategoryTypesResponse>(_GetCategoryTypesResponse_QNAME, GetCategoryTypesResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://test", name = "removeCategoryResponse")
+    public JAXBElement<RemoveCategoryResponse> createRemoveCategoryResponse(RemoveCategoryResponse value) {
+        return new JAXBElement<RemoveCategoryResponse>(_RemoveCategoryResponse_QNAME, RemoveCategoryResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoriesResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RemoveElementResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://test", name = "getCategoriesResponse")
-    public JAXBElement<GetCategoriesResponse> createGetCategoriesResponse(GetCategoriesResponse value) {
-        return new JAXBElement<GetCategoriesResponse>(_GetCategoriesResponse_QNAME, GetCategoriesResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://test", name = "removeElementResponse")
+    public JAXBElement<RemoveElementResponse> createRemoveElementResponse(RemoveElementResponse value) {
+        return new JAXBElement<RemoveElementResponse>(_RemoveElementResponse_QNAME, RemoveElementResponse.class, null, value);
     }
 
 }

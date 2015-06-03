@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="kategoria" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="kategoria" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="parametr1" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="parametr2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="typ" type="{http://test}elementyEntity" minOccurs="0"/>
@@ -40,21 +40,10 @@ import javax.xml.bind.annotation.XmlType;
 public class ElementEntity {
 
     protected int id;
-    protected int kategoria;
+    protected Integer kategoria;
     protected int parametr1;
     protected String parametr2;
     protected ElementyEntity typ;
-
-    @Override
-    public boolean equals(Object obj) {
-        ElementEntity entity = (ElementEntity) obj;
-        System.out.println(id + "=" + entity.id + ", " +
-                    kategoria + "=" + entity.kategoria + ", " +
-                    parametr1 + "=" + entity.parametr1 + ", " +
-                    parametr2 + "=" + entity.parametr2 + ", " +
-                          typ + "=" + entity.typ);
-        return id == entity.id;
-    }
 
     /**
      * Gets the value of the id property.
@@ -75,16 +64,24 @@ public class ElementEntity {
     /**
      * Gets the value of the kategoria property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getKategoria() {
+    public Integer getKategoria() {
         return kategoria;
     }
 
     /**
      * Sets the value of the kategoria property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setKategoria(int value) {
+    public void setKategoria(Integer value) {
         this.kategoria = value;
     }
 

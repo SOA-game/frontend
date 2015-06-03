@@ -42,17 +42,6 @@ public class ElementyEntity {
     protected int id;
     protected String nazwa;
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof ElementyEntity) {
-            ElementyEntity entity = (ElementyEntity) obj;
-            System.out.println(id +"="+entity.id);
-            return id == entity.id;
-        }
-        System.out.println("inne elementy");
-        return super.equals(obj);
-    }
-
     /**
      * Gets the value of the atrybut1 property.
      * 

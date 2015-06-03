@@ -1,71 +1,81 @@
 <?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="IndexManagerService" targetNamespace="http://test" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://test" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
 <xs:schema elementFormDefault="unqualified" targetNamespace="http://test" version="1.0" xmlns:tns="http://test" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<xs:element name="addCategory" types="tns:addCategory"/>
-<xs:element name="addCategoryResponse" types="tns:addCategoryResponse"/>
-<xs:element name="addElement" types="tns:addElement"/>
-<xs:element name="addElementResponse" types="tns:addElementResponse"/>
-<xs:element name="getCategories" types="tns:getCategories"/>
-<xs:element name="getCategoriesResponse" types="tns:getCategoriesResponse"/>
-<xs:element name="getCategoryEntity" types="tns:getCategoryEntity"/>
-<xs:element name="getCategoryEntityResponse" types="tns:getCategoryEntityResponse"/>
-<xs:element name="getCategoryTypes" types="tns:getCategoryTypes"/>
-<xs:element name="getCategoryTypesResponse" types="tns:getCategoryTypesResponse"/>
-<xs:element name="getElementTypes" types="tns:getElementTypes"/>
-<xs:element name="getElementTypesResponse" types="tns:getElementTypesResponse"/>
+<xs:element name="addCategory" type="tns:addCategory"/>
+<xs:element name="addCategoryResponse" type="tns:addCategoryResponse"/>
+<xs:element name="addElement" type="tns:addElement"/>
+<xs:element name="addElementResponse" type="tns:addElementResponse"/>
+<xs:element name="getCategories" type="tns:getCategories"/>
+<xs:element name="getCategoriesResponse" type="tns:getCategoriesResponse"/>
+<xs:element name="getCategoryEntity" type="tns:getCategoryEntity"/>
+<xs:element name="getCategoryEntityResponse" type="tns:getCategoryEntityResponse"/>
+<xs:element name="getCategoryTypes" type="tns:getCategoryTypes"/>
+<xs:element name="getCategoryTypesResponse" type="tns:getCategoryTypesResponse"/>
+<xs:element name="getElementTypes" type="tns:getElementTypes"/>
+<xs:element name="getElementTypesResponse" type="tns:getElementTypesResponse"/>
+<xs:element name="removeCategory" type="tns:removeCategory"/>
+<xs:element name="removeCategoryResponse" type="tns:removeCategoryResponse"/>
+<xs:complexType name="removeCategory">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="removeCategoryResponse">
+    <xs:sequence/>
+  </xs:complexType>
 <xs:complexType name="getCategoryTypes">
     <xs:sequence/>
   </xs:complexType>
 <xs:complexType name="getCategoryTypesResponse">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" types="tns:kategorieEntity"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:kategorieEntity"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="kategorieEntity">
     <xs:sequence>
-      <xs:element minOccurs="0" name="atrybut" types="xs:string"/>
-      <xs:element name="id" types="xs:int"/>
-      <xs:element minOccurs="0" name="nazwa" types="xs:string"/>
+      <xs:element minOccurs="0" name="atrybut" type="xs:string"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="nazwa" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="getCategoryEntity">
     <xs:sequence>
-      <xs:element name="arg0" types="xs:int"/>
+      <xs:element name="arg0" type="xs:int"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="getCategoryEntityResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" types="tns:kategoriaEntity"/>
+      <xs:element minOccurs="0" name="return" type="tns:kategoriaEntity"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="kategoriaEntity">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="elementy" nillable="true" types="tns:elementEntity"/>
-      <xs:element name="id" types="xs:int"/>
-      <xs:element minOccurs="0" name="typ" types="tns:kategorieEntity"/>
-      <xs:element name="wartosc" types="xs:int"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="elementy" nillable="true" type="tns:elementEntity"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="typ" type="tns:kategorieEntity"/>
+      <xs:element name="wartosc" type="xs:int"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="elementEntity">
     <xs:sequence>
-      <xs:element name="id" types="xs:int"/>
-      <xs:element name="kategoria" types="xs:int"/>
-      <xs:element name="parametr1" types="xs:int"/>
-      <xs:element minOccurs="0" name="parametr2" types="xs:string"/>
-      <xs:element minOccurs="0" name="typ" types="tns:elementyEntity"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="kategoria" type="xs:int"/>
+      <xs:element name="parametr1" type="xs:int"/>
+      <xs:element minOccurs="0" name="parametr2" type="xs:string"/>
+      <xs:element minOccurs="0" name="typ" type="tns:elementyEntity"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="elementyEntity">
     <xs:sequence>
-      <xs:element minOccurs="0" name="atrybut1" types="xs:string"/>
-      <xs:element minOccurs="0" name="atrybut2" types="xs:string"/>
-      <xs:element name="id" types="xs:int"/>
-      <xs:element minOccurs="0" name="nazwa" types="xs:string"/>
+      <xs:element minOccurs="0" name="atrybut1" type="xs:string"/>
+      <xs:element minOccurs="0" name="atrybut2" type="xs:string"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="nazwa" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="addCategory">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" types="tns:kategoriaEntity"/>
+      <xs:element minOccurs="0" name="arg0" type="tns:kategoriaEntity"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="addCategoryResponse">
@@ -76,7 +86,7 @@
   </xs:complexType>
 <xs:complexType name="getElementTypesResponse">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" types="tns:elementyEntity"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:elementyEntity"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="getCategories">
@@ -84,12 +94,12 @@
   </xs:complexType>
 <xs:complexType name="getCategoriesResponse">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" types="tns:kategoriaEntity"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:kategoriaEntity"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="addElement">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" types="tns:elementEntity"/>
+      <xs:element minOccurs="0" name="arg0" type="tns:elementEntity"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="addElementResponse">
@@ -111,6 +121,10 @@
   </wsdl:message>
   <wsdl:message name="getCategoryEntity">
     <wsdl:part element="tns:getCategoryEntity" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeCategory">
+    <wsdl:part element="tns:removeCategory" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getCategoryEntityResponse">
@@ -145,7 +159,17 @@
     <wsdl:part element="tns:getCategoriesResponse" name="parameters">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="removeCategoryResponse">
+    <wsdl:part element="tns:removeCategoryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="IndexManager">
+    <wsdl:operation name="removeCategory">
+      <wsdl:input message="tns:removeCategory" name="removeCategory">
+    </wsdl:input>
+      <wsdl:output message="tns:removeCategoryResponse" name="removeCategoryResponse">
+    </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getCategoryTypes">
       <wsdl:input message="tns:getCategoryTypes" name="getCategoryTypes">
     </wsdl:input>
@@ -183,8 +207,17 @@
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="IndexManagerServiceSoapBinding" types="tns:IndexManager">
+  <wsdl:binding name="IndexManagerServiceSoapBinding" type="tns:IndexManager">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="removeCategory">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeCategory">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeCategoryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getCategoryTypes">
       <soap:operation soapAction="" style="document"/>
       <wsdl:input name="getCategoryTypes">

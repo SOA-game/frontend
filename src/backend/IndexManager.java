@@ -26,6 +26,17 @@ public interface IndexManager {
 
     /**
      * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "removeCategory", targetNamespace = "http://test", className = "backend.RemoveCategory")
+    @ResponseWrapper(localName = "removeCategoryResponse", targetNamespace = "http://test", className = "backend.RemoveCategoryResponse")
+    public void removeCategory(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<backend.KategorieEntity>
      */
@@ -34,6 +45,17 @@ public interface IndexManager {
     @RequestWrapper(localName = "getCategoryTypes", targetNamespace = "http://test", className = "backend.GetCategoryTypes")
     @ResponseWrapper(localName = "getCategoryTypesResponse", targetNamespace = "http://test", className = "backend.GetCategoryTypesResponse")
     public List<KategorieEntity> getCategoryTypes();
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "removeElement", targetNamespace = "http://test", className = "backend.RemoveElement")
+    @ResponseWrapper(localName = "removeElementResponse", targetNamespace = "http://test", className = "backend.RemoveElementResponse")
+    public void removeElement(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 
